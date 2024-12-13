@@ -5,10 +5,9 @@ const stripe = require('stripe')(process.env.STRIPE_SK);
 
 import { buffer } from "micro";
 
-// This is your Stripe CLI webhook secret for testing your endpoint locally.
-const endpointSecret = "whsec_54dbe512c3f69d719ddca1312f18e805c3f1dc89044cebea70977dc4da5edf22";
-
-const accountId = "acct_1LONLbE0rmJMbii4";
+// This is where your Stripe CLI webhook secret for testing your endpoint locally goes
+const endpointSecret = process.env.STRIPE_ENDPOINT_SECRET;
+const accountId = process.env.STRIPE_ACCOUNT_ID;
 
 
 export default async function handler(req, res) {
